@@ -1,22 +1,33 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: #00274C;
 }
 
-nav {
-    background-color: #FFCB05;
+.menu-style {
+    background-color: #00274C;
 }
 
-nav ul {
+.menu-style ul {
     list-style-type: none;
-    padding: 15px;
+    padding: 20px;
+    margin: 0;
 }
 
-nav li {
-    display: inline;
-    margin-right: 20px;
+.menu-style ol {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
 }
 
-nav a {
+.menu-style li {
+    background-color: #FFCB05;
+    margin: 20px 0;
+    border: solid 2px #00274C;
+}
+
+.menu-style a {
+    display: block;
     color: #00274C;
     text-align: center;
     text-decoration: none;
@@ -24,6 +35,64 @@ nav a {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     letter-spacing: -1px;
+    padding: 10px;
+}
+
+.menu-style a:focus,
+.menu-style a:hover {
+    background-color: #00274C;
+    color: #FFCB05;
+}
+
+.menu-style li:hover,
+.menu-style li:focus {
+    background-color: #00274C;
+}
+
+.text2.menu-style {
+    background-color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.text2.menu-style li {
+    background-color: #FFCB05;
+}
+
+.text3.menu-style {
+    background-color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.text3.menu-style li {
+    background-color: #FFCB05;
+}
+
+.text3 h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+
+.text3 p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 10px;
+}
+
+.text4.menu-style {
+    background-color: white;
+}
+
+.text4.menu-style li {
+    background-color: #FFCB05;
 }
 
 h1 {
@@ -33,21 +102,33 @@ h1 {
 }
 
 /*figure out how to hide skip to main*/
-.skip {
+.skip a {
     position: absolute;
-    top: -40px;
     left: 0;
+    top: -100px;
+    /* hidden initially */
+    background: #FFCB05;
+    color: #00274C;
+    padding: 8px 16px;
+    z-index: 1000;
+    /* make sure it appears above other content */
+    text-decoration: none;
 }
 
-.skip:focus {
-    top: -25px;
-    background: #FFCB05
+.skip a:focus {
+    top: 0;
+    /* move into view */
+}
+
+:focus {
+    border: dashed #00274C 2px;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr;*/
+    padding: 30px 30px 0 30px;
 }
 
 header {
@@ -57,22 +138,141 @@ header {
     text-align: center;
 }
 
-.container section .text1 {
-    grid-column: 1 / 3;
+.container section:nth-child(1) {
+    grid-column: 1 / 5;
     grid-row: 1 / 2;
 }
 
-.text2 {
-    grid-column: 3 / 5;
-    grid-row: 1 / 2;
+.container section:nth-child(2) {
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
 }
 
-.resume-image {
-    grid-column: 1 / 4;
+.text2 ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.text2 ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.text2 li {
+    margin-bottom: 10px;
+}
+
+.container section:nth-child(3) {
+    grid-column: 1 / 5;
     grid-row: 3 / 4;
 }
 
+.text3 ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.text3 ol {
+    padding-left: 10px;
+}
+
+.text3 li {
+    margin-bottom: 10px;
+    align-content: center;
+}
+
+.container section:nth-child(4) {
+    grid-column: 1 / 5;
+    grid-row: 4 / 5;
+}
+
+.text4 ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.text4 ol {
+    padding-left: 10px;
+}
+
+.text4 li {
+    margin-bottom: 20px;
+}
+
+.text5 {
+    grid-column: 1 / 5;
+    grid-row: 5 / 6;
+}
+
+.text5 a {
+    color: #00274C;
+}
+
+
+.resume-image {
+    grid-column: 1 / 5;
+    grid-row: 6 / 7;
+}
+
 .resume-image img {
-    width: 50%;
+    width: 100%;
+    height: auto;
+}
+
+.youtube-video {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    margin-top: 20px;
+}
+
+.youtube-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+footer {
+    background-color: #00274C;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    grid-column: 1 / 5;
+    grid-row: 7 / 8;
+    margin-top: 20px;
+}
+
+footer a {
+    color: white;
+}
+
+.home-image {
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+}
+
+.home-image img {
+    width: 100%;
+    height: auto;
+}
+
+.networking-festifall {
+    grid-column: 1 / 5;
+    grid-row: 6 / 7;
+    margin-top: 20px;
+}
+
+.networking-festifall img {
+    width: 100%;
+    height: auto;
+}
+
+.networking-orientation {
+    grid-column: 1 / 5;
+    grid-row: 7 / 8;
+    margin-top: 20px;
+}
+
+.networking-orientation img {
+    width: 100%;
     height: auto;
 }
