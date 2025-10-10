@@ -8,11 +8,8 @@ body {
     background-color: #00274C;
 }
 
-.menu-style li:has(a.active) {
+.menu-style a.active {
     background-color: #00274C;
-}
-
-.menu-style li:has(a.active) a {
     color: #FFCB05;
 }
 
