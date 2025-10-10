@@ -8,6 +8,14 @@ body {
     background-color: #00274C;
 }
 
+.menu-style li:has(a.active) {
+    background-color: #00274C;
+}
+
+.menu-style li:has(a.active) a {
+    color: #FFCB05;
+}
+
 .menu-style ul {
     list-style-type: none;
     padding: 20px;
