@@ -163,10 +163,10 @@ header {
     grid-row: 4;
 }
 
-.page-home .youtube-video {
+/* .page-home .youtube-video {
     grid-column: 1 / 5;
     grid-row: 3;
-}
+} */
 
 .page-home .container section:nth-of-type(3) {
     grid-column: 1 / 5;
@@ -332,15 +332,20 @@ header {
 }
 
 .youtube-video {
-    grid-column: 1 / -1;
-    grid-row: 3 / 4;
-    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    grid-column: 1 / -1;  /* Add this - span all columns */
+    grid-row: 3;  /* Add this - specify which row */
 }
 
 .youtube-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    border: none;
 }
 
 footer {
@@ -431,11 +436,11 @@ footer a {
         grid-row: 4 / 5;
     }
 
-    .page-home .youtube-video {
+    /* .page-home .youtube-video {
         grid-column: 1 / -1;
         grid-row: 3 / 4;
         margin: 20px;
-    }
+    } */
 
     .page-home .home-image {
         grid-column: 1 / 5;
