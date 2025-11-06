@@ -104,6 +104,12 @@ h1 {
     font-size: 48px;
     font-family: Helvetica, sans-serif;
     letter-spacing: -1px;
+    text-align: center;
+    grid-column: 1 / -1;
+    /* Span all columns */
+    grid-row: 1;
+    /* Always place at the top */
+    margin-bottom: 20px;
 }
 
 /*figure out how to hide skip to main*/
@@ -132,7 +138,10 @@ h1 {
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr;*/
+    grid-auto-rows: auto;
+    /* Let rows size to content */
+    gap: 20px;
+    /* Add space between grid items */
     padding: 30px 30px 0 30px;
 }
 
@@ -143,14 +152,112 @@ header {
     text-align: center;
 }
 
-.container section:nth-child(1) {
+/* Home page specific layouts */
+.page-home .container section:nth-of-type(1) {
     grid-column: 1 / 5;
-    grid-row: 1 / 2;
+    grid-row: 2;
 }
 
-.container section:nth-child(2) {
+.page-home .container section:nth-of-type(2) {
+    grid-column: 1 / 5;
+    grid-row: 4;
+}
+
+.page-home .youtube-video {
+    grid-column: 1 / 5;
+    grid-row: 3;
+}
+
+.page-home .container section:nth-of-type(3) {
+    grid-column: 1 / 5;
+    grid-row: 5;
+}
+
+.page-home .text5 {
+    grid-column: 1 / 5;
+    grid-row: 6;
+}
+
+.page-home .home-image {
+    grid-column: 1 / 5;
+    grid-row: 7;
+    margin-top: 20px;
+}
+
+/* Resume page specific layouts */
+.page-resume .container section:nth-of-type(1) {
     grid-column: 1 / 5;
     grid-row: 2 / 3;
+}
+
+.page-resume .container section:nth-of-type(2) {
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+}
+
+/* Networking page specific layouts */
+.page-networking .container section:nth-of-type(1) {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+
+.page-networking .container section:nth-of-type(2) {
+    grid-column: 1 / 5;
+    grid-row: 3;
+}
+
+.page-networking .container section:nth-of-type(3) {
+    grid-column: 1 / 5;
+    grid-row: 4;
+}
+
+.page-networking .container section:nth-of-type(4) {
+    grid-column: 1 / 5;
+    grid-row: 5;
+}
+
+.page-networking .text5 {
+    grid-column: 1 / 5;
+    grid-row: 6;
+}
+
+.page-networking .networking-festifall {
+    grid-column: 1 / 5;
+    grid-row: 7;
+    margin-top: 20px;
+}
+
+.page-networking .networking-orientation {
+    grid-column: 1 / 5;
+    grid-row: 8;
+    margin-top: 20px;
+}
+
+/* Portfolio page specific layouts */
+.page-portfolio .container section:nth-of-type(1) {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+
+.page-portfolio .container section:nth-of-type(2) {
+    grid-column: 1 / 5;
+    grid-row: 3;
+}
+
+.page-portfolio .container section:nth-of-type(3) {
+    grid-column: 1 / 5;
+    grid-row: 4;
+}
+
+.page-portfolio .container section:nth-of-type(4) {
+    grid-column: 1 / 5;
+    grid-row: 5;
+}
+
+.page-portfolio .text5 {
+    grid-column: 1 / 5;
+    grid-row: 6;
+    margin-top: 20px;
 }
 
 .text2 ul {
@@ -167,7 +274,7 @@ header {
     margin-bottom: 10px;
 }
 
-.container section:nth-child(3) {
+.container section:nth-of-type(3) {
     grid-column: 1 / 5;
     grid-row: 3 / 4;
 }
@@ -186,8 +293,8 @@ header {
     align-content: center;
 }
 
-.container section:nth-child(4) {
-    grid-column: 1 / 5;
+.container section:nth-of-type(4) {
+    grid-column: 1 / 4;
     grid-row: 4 / 5;
 }
 
@@ -205,7 +312,7 @@ header {
 }
 
 .text5 {
-    grid-column: 1 / 5;
+    grid-column: 4 / 5;
     grid-row: 5 / 6;
 }
 
@@ -226,7 +333,7 @@ header {
 
 .youtube-video {
     grid-column: 1 / -1;
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     margin-top: 20px;
 }
 
@@ -280,4 +387,117 @@ footer a {
 .networking-orientation img {
     width: 100%;
     height: auto;
+}
+
+@media screen and (min-width:1024px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: #00274C;
+        padding-top: 20px;
+    }
+
+    header img {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin-left: 250px;
+    }
+
+    footer {
+        margin-left: 250px;
+    }
+
+    /* Desktop layouts for each page */
+
+    /* Home page desktop layout */
+    .page-home .container h1 {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+    }
+
+    .page-home .container section:nth-of-type(1) {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+    }
+
+    .page-home .container section:nth-of-type(2) {
+        grid-column: 1 / 5;
+        grid-row: 4 / 5;
+    }
+
+    .page-home .youtube-video {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        margin: 20px;
+    }
+
+    .page-home .home-image {
+        grid-column: 1 / 5;
+        grid-row: 6 / 7;
+    }
+
+    .page-home .container section:nth-of-type(3) {
+        grid-column: 1 / 5;
+        grid-row: 5 / 6;
+    }
+
+    .page-home .text5 {
+        grid-column: 1 / 5;
+        grid-row: 7 / 8;
+    }
+
+    /* Resume page desktop layout */
+    .page-resume .container section:nth-of-type(1) {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .page-resume .container section:nth-of-type(2) {
+        grid-column: 2 / 5;
+        grid-row: 3 / 4;
+    }
+
+    .page-resume .container section:nth-of-type(3) {
+        grid-column: 1 / 4;
+        grid-row: 5 / 6;
+    }
+
+    /* Networking page desktop layout */
+    .page-networking .container section:nth-of-type(1) {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+    }
+
+    .page-networking .container section:nth-of-type(2) {
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+    }
+
+    .page-networking .container section:nth-of-type(3) {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+    }
+
+    /* Portfolio page desktop layout */
+    .page-portfolio .container section:nth-of-type(1) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .page-portfolio .container section:nth-of-type(2) {
+        grid-column: 3 / 5;
+        grid-row: 2 / 3;
+    }
+
+    .page-portfolio .container section:nth-of-type(3) {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+    }
+
 }
