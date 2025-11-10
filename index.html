@@ -97,9 +97,18 @@
         UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. -->
   </main>
   <footer>
-    <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career
-        Development Office </a></p>
+    <p>
+      © <span id="year"></span> University of Michigan School of Information |
+      UMSI Career Development Office
+    </p>
   </footer>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+
 </body>
 
 </html>

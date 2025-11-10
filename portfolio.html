@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <title>MSI Career Development Resource Hub</title>
 </head>
 
@@ -128,9 +128,18 @@
         </section>
     </main>
     <footer>
-        <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI
-                Career Development Office </a></p>
+        <p>
+            © <span id="year"></span> University of Michigan School of Information |
+            UMSI Career Development Office
+        </p>
     </footer>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("year").textContent = new Date().getFullYear();
+        });
+    </script>
+
 </body>
 
 </html>
